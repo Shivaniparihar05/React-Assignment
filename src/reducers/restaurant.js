@@ -28,10 +28,10 @@ export const restaurantReducer = (state = defaultState, action) =>{
                 loading: action.loading
             }
         case 'FILTER_RESTAURANTS':
-            const key = action.filter;
+            const key = action.filter.toLowerCase();
             let filteredList = state.filteredRestaurants;
             if (key.length) {
-                filteredList = state.filteredRestaurants.filter(res => res.city.includes(key) || res.area.includes(key) || res.address.includes(key))
+               filteredList = state.filteredRestaurants.filter(res => res.name.toLowerCase().includes(key) || res.area.toLowerCase().includes(key) || res.address.toLowerCase().includes(key))
             }
             console.log("filter ==>", key.length)
             console.log("filteredRestaurants ==>", filteredList)
