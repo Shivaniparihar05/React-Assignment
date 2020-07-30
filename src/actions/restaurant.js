@@ -16,7 +16,7 @@ export const fetchRestaurants=(restaurant) =>({
 export const thunkRestaurants =(city='') =>{
     return (dispatch, getState) =>{
        
-        fetch(`http://opentable.herokuapp.com/api/restaurants?city=${city}`)
+        fetch(`https://opentable.herokuapp.com/api/restaurants?city=${city}`)
         .then(handleErrors)
         .then(res => res.json())
             .then((data) =>{
